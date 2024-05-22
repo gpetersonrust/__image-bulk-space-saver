@@ -68,7 +68,8 @@ class ImageCollector {
             height: metadata.height
           });
         } catch (error) {
-          console.error(`Error reading metadata of ${filePath}:`, error);
+          console.error(`Error reading metadata of ${filePath}: ${error.message}`);
+          // Skip unsupported image formats
         }
       }
     }
